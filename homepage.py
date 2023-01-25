@@ -9,7 +9,11 @@ def homepage():
     )
 
     st.sidebar.title("Navigation")
-    page = st.sidebar.selectbox("Go to page", ["Product Recommendation", "Delivery Time"])
+    page = st.sidebar.selectbox("Go to page", ["Sentiment Analysis","Product Recommendation", "Delivery Time"])
+
+    if page == "Sentiment Analysis":
+        import sentiment
+        sentiment.sentiment()
 
     if page == "Product Recommendation":
         import productRS
