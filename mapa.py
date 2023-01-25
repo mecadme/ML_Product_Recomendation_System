@@ -33,9 +33,9 @@ def mapa():
     bottom_5_states['sellerToCarry_time'] = bottom_5_states['sellerToCarry_time'].astype(str).str.split(":").str[0] + "hs"
     bottom_5_states['carry_time'] = bottom_5_states['carry_time'].astype(str).str.split(":").str[0] + "hs"
 
-    st.subheader(":green[Top 5 States with the Best Average Delivery Time:]")
+    st.subheader("Top 5 States with the :green[Best Average] Delivery Time:")
     st.dataframe(top_5_states)
-    st.subheader(":red[Bottom 5 States with the Worst Average Delivery Time:]")
+    st.subheader("Bottom 5 States with the :red[Worst Average] Delivery Time:")
     st.dataframe(bottom_5_states)
 
     # MAPA POR ESTADOS
@@ -103,6 +103,7 @@ def mapa():
     destination_city = st.selectbox("Select the destination City:", data['customerCity'].unique())
 
     def color_producer(delay):
+        delay = delay.split(".")[0]
         # Convert the string to a datetime object
         delay_obj = datetime.strptime(delay, "%d days %H:%M:%S")
         refer_obj = datetime.strptime("1900-01-14", "%Y-%m-%d")

@@ -43,5 +43,7 @@ def sentiment():
         # Display the analysis
         if(new_prediction(Preprocessing(translation(text)))[0] == "positive"):
             st.subheader("Your comment is: :green[Positive]")
-        else:
+        elif(new_prediction(Preprocessing(translation(text)))[0] == "negative"):
             st.subheader("Your comment is: :red[Negative]")
+        else:
+            st.subheader("Your comment is: Neutral")
