@@ -14,8 +14,11 @@ def sentiment():
     nltk.download('punkt')
     nltk.download('wordnet')
 
-    filename='datasets/model.sav'
-    loaded_model = pickle.load(open(filename, 'rb'))
+    #filename='datasets/model.sav'
+    #loaded_model = pickle.load(open(filename, 'rb'))
+
+    with open('datasets/model.sav', 'rb') as f:
+        loaded_model = pickle.load(f)
 
     with open('datasets/vectorizer.pkl', 'rb') as f:
         vectorizer = pickle.load(f)
