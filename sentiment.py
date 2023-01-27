@@ -86,7 +86,7 @@ def sentiment():
     def new_prediction(text):
         vectorized_text = vectorizer.transform([text])
         pred = loaded_model.predict(vectorized_text)
-        return pred    
+        return pred
 
     st.title("Sentiment Analysis!")
 

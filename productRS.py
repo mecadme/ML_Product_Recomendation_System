@@ -20,7 +20,7 @@ def productRS():
     st.title("Product Recommendation System")
     selected_product = st.selectbox("Select a product", product_list)
 
-    st.write("Selected product:: " + selected_product)
+    st.write("Selected product: " + selected_product)
 
     #Filtrar los datos de la matriz para mostrar solo los productos relacionados
     filtered_matrix = matrix_data[matrix_data["product_name"] == selected_product]
