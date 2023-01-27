@@ -51,12 +51,14 @@ def sentiment():
         # plot
         ax1.pie(val, labels=label, colors=colors, textprops={'fontsize': 8})
         ax1.add_artist(plt.Circle((0, 0), 0.61, color='white'))
-        ax1.set_title("Customer Satisfaction Score", fontsize=8)
+        ax1.set_title("", fontsize=8)
         ax1.set_position([0, 0, 0.5, 0.5])
 
         # Create the histogram
         ax2=sns.histplot(data_year['review_score'], bins=5,fill=sns.color_palette('Blues'))
-        ax2.set_title('Histogram')
+        ax2.set_title('Total Score Count')
+        ax2.set_xlabel("Review Score")
+        ax2.set_ylabel("")
         ax2.set_position([0, 0, 0.7, 0.1])
 
         plt.tight_layout()
@@ -106,6 +108,7 @@ def sentiment():
     years = [2016, 2017, 2018]
 
     # Use st.selectbox() to create a dropdown menu for the year filter
+    st.title("Costumer Satisfaction Score")
     selected_year = st.selectbox("Select a year to filter by:", years)
 
     st.write(CSAT_graph(comments,selected_year))
